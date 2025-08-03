@@ -6,6 +6,6 @@ import { FeedbackFormComponent } from './pages/feedback-form/feedback-form';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'api', component: ApiDataComponent },
+  { path: 'api-data', component: ApiDataComponent },
   { path: 'form', component: FeedbackFormComponent },
 ];
