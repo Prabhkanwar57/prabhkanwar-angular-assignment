@@ -1,0 +1,11 @@
+<h2>⚽ Football Players</h2>
+
+<ul class="user-list">
+  <li *ngFor="let user of users">
+    <img [src]="user.strThumb" width="60" alt="{{ user.strPlayer }}" />
+    <div>
+      <strong>{{ user.strPlayer }}</strong> – {{ user.strPosition }} <br />
+      <small>Nationality: {{ user.strNationality }}</small>
+    </div>
+  </li>
+</ul>

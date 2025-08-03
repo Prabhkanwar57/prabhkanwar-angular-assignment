@@ -1,0 +1,23 @@
+<h2>📨 Send Us Your Feedback</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>Name</label>
+  <input formControlName="name" />
+  <div *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+    ❌ Name is required
+  </div>
+
+  <label>Email</label>
+  <input formControlName="email" />
+  <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+    ❌ Enter a valid email
+  </div>
+
+  <label>Message</label>
+  <textarea formControlName="message"></textarea>
+  <div *ngIf="form.get('message')?.invalid && form.get('message')?.touched">
+    ❌ Message is required
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>

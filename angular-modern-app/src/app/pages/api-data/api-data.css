@@ -1,0 +1,110 @@
+.user-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem auto;
+  max-width: 450px;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 0 60px rgba(255, 255, 255, 0.15),
+    0 8px 24px rgba(0, 30, 70, 0.1);
+  -webkit-font-smoothing: antialiased;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.user-list li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+  padding: 18px 26px;
+  border-radius: 20px;
+  border-left: 6px solid #54ffe6;
+  background: linear-gradient(120deg, rgba(0, 200, 255, 0.14) 0%, rgba(80, 0, 255, 0.07) 100%);
+  box-shadow: 0 8px 40px rgba(0, 30, 70, 0.12), 0 3px 9px rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.22s cubic-bezier(.4, 2, .6, 1),
+    box-shadow 0.22s cubic-bezier(.4, 2, .6, 1),
+    background 0.35s,
+    border-color 0.25s;
+}
+
+.user-list li:hover {
+  background: linear-gradient(120deg, #00c2ffaa 0%, #8000ff88 100%);
+  border-left-color: #ff73fa;
+  transform: scale(1.035) translateY(-3px);
+  box-shadow: 0 14px 52px rgba(0, 193, 255, 0.28), 0 6px 24px rgba(0, 0, 0, 0.14);
+  cursor: pointer;
+  z-index: 1;
+}
+
+.user-list img {
+  flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 5px 22px #00c2ff55;
+  object-fit: cover;
+  background: #f4f8fe;
+  transition: box-shadow 0.25s ease;
+}
+
+.user-list li:hover img {
+  box-shadow: 0 6px 26px #ff73fabf, 0 2px 6px #00c2ffaa;
+}
+
+.user-list li div {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-list li .username {
+  font-weight: 700;
+  font-size: 1.22rem;
+  letter-spacing: 0.03em;
+  color: #232446;
+  text-shadow: 0 1px 0 #fff7;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-list li .status {
+  font-size: 1rem;
+  color: #5e7fa3;
+  font-style: italic;
+  margin-top: 2px;
+  letter-spacing: 0.015em;
+  user-select: none;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 480px) {
+  .user-list {
+    max-width: 90vw;
+    margin: 1.5rem auto;
+  }
+
+  .user-list li {
+    gap: 14px;
+    padding: 14px 18px;
+  }
+
+  .user-list img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .user-list li .username {
+    font-size: 1.1rem;
+  }
+
+  .user-list li .status {
+    font-size: 0.88rem;
+  }
+}
